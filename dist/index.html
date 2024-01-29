@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" id="hyper">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="./output.css">
+
+</head>
+
+<body  class="bg-slate-100 dark:bg-slate-800 dark:text-white  ">
+    <button class="text-center cursor-pointer fixed top-2 right-4 w-12 h-12 p-1 rounded-full shadow-lg dark:fill-white dark:shadow-none dark:bg-slate-700 sm:block md:hidden" onclick="show()">
+        <svg xmlns="http://www.w3.org/2000/svg" id="open" class="bi bi-list" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" id="close" class="bi bi-x hidden" viewBox="0 0 16 16">
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+        </svg>
+    </button>
+    <nav id="menu" class="sidebar -hidden  ">
+        <div class="flex whitespace-nowrap   ">
+            <img class="w-16 h-16 m-3 p-1 rounded-full" src="Renz.jpg" alt="profile">
+            <h1 class="mt-7 p-1 text-2xl text-teal-900 dark:text-teal-400 font-sans">Renz Aljon Cruz</h1>
+            <button id="sunmoon" onclick="tgdark()" class="fixed p-1 m-2 top-4 left-64   rounded-full dark:shadow-none  w-10 h-10 fill-black dark:fill-white">
+                <svg xmlns="http://www.w3.org/2000/svg" id="sunl"  class="bi bi-brightness-high" viewBox="0 0 16 16">
+                    <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" id="moonl"  class="bi bi-moon hidden" viewBox="0 0 16 16">
+                    <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286"/>
+                </svg>
+            </button>
+        </div>
+        <div class="flex flex-col text-gray-600">
+            <ul class="text-center text-xl dark:text-gray-50 mt-10 ">
+                <li class="m1 p-4 hover:bg-slate-100 dark:hover:bg-slate-500 hover:text-teal-900 dark:hover:text-teal-200 rounded-md"><a class="scroll-smooth" href="#home">Home</a></li>
+                <li class="m1 p-4 hover:bg-slate-100 dark:hover:bg-slate-500 hover:text-teal-900 dark:hover:text-teal-200 rounded-md"><a class="scroll-smooth" href="#portfolio">Projects</a></li>
+                <li class="m1 p-4 hover:bg-slate-100 dark:hover:bg-slate-500 hover:text-teal-900 dark:hover:text-teal-200 rounded-md"><a class="scroll-smooth" href="#tools">Tools</a></li>
+                <li class=" m-1 p-4   hover:bg-slate-100 dark:hover:bg-slate-500 hover:text-teal-900 dark:hover:text-teal-200 rounded-md"><a class="scroll-smooth" href="#blogs">Blog</a></li>
+            </ul>
+        </div>
+        <div class="flex flex-col text-gray-600">
+            <h1 class="mt-7 p-1 pt-10 text-2xl text-teal-900 dark:text-teal-400 font-sans text-center border-t border-t-gray-600 mx-5 dark:border-b-gray-50">Social Sites</h1>
+            <ul class="text-center text-xl dark:text-gray-50 mt-4">
+                <li class="m-1 p-2 hover:bg-slate-100 dark:hover:bg-slate-500 hover:text-teal-900 dark:hover:text-teal-200 rounded-md"><a href="https://www.facebook.com/profile.php?id=100066723944685">Facebook</a></li>
+                <li class="m-1 p-2 hover:bg-slate-100 dark:hover:bg-slate-500 hover:text-teal-900 dark:hover:text-teal-200 rounded-md"><a href="https://www.instagram.com/rarc_0524/">Instagram</a></li>
+                <li class="m-1 p-2 hover:bg-slate-100 dark:hover:bg-slate-500 hover:text-teal-900 dark:hover:text-teal-200 rounded-md"><a href="https://www.linkedin.com/in/renz-aljon-cruz-ba13bb286">LinkedIn</a></li>
+                <li class="m-1 p-2 hover:bg-slate-100 dark:hover:bg-slate-500 hover:text-teal-900 dark:hover:text-teal-200 rounded-md"><a href="https://github.com/RenzAljon24">Github</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--For Tablets and Larger Screens-->
+    <nav >            
+        <div class="top-0 fixed  md:block lg:block xl:block 2xl:block xsm:hidden sm:hidden ">
+            <div class=" w-screen h-24 bg-white border-b-gray-50 dark:bg-slate-700 dark:border-b-slate-600 shadow-lg duration-300 ease-in-out opacity-90">
+                <div class="flex dark:text-white">
+                    <img class="m-3 w-20 h-16 rounded-md" src="Renz.jpg" alt="Logo">
+                    <h2 class="text-3xl mt-6 font-mono">Renz Aljon Cruz</h2>
+                    <ul class=" ml-auto mt-8 mr-24 text-xl">
+                        <a class="p-5 dark:text-white dark:hover:bg-slate-500 hover:text-teal-900 dark:hover:text-teal-200 rounded-md" class="scroll-smooth" href="#home">Home</a>
+                        <a class="p-5 dark:text-white dark:hover:bg-slate-500 hover:text-teal-900 dark:hover:text-teal-200 rounded-md" class="scroll-smooth" href="#portfolio">Portfolio</a>
+                        <a class="p-5 dark:text-white dark:hover:bg-slate-500 hover:text-teal-900 dark:hover:text-teal-200 rounded-md" class="scroll-smooth" href="#tools">Tools</a>
+                        <a class="p-5 dark:text-white dark:hover:bg-slate-500 hover:text-teal-900 dark:hover:text-teal-200 rounded-md" class="scroll-smooth" href="#blogs">Blog</a>
+                    </ul>
+                    <button id="sunmoon" onclick="tgdark()" class="fixed p-2 w-14 h-14 fill-black dark:fill-white top-4 right-3 rounded-full  ">
+                        <svg xmlns="http://www.w3.org/2000/svg" id="sunL" class="bi bi-brightness-high" viewBox="0 0 16 16">
+                            <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" id="moonL" class="bi bi-moon hidden" viewBox="0 0 16 16">
+                            <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278M4.858 1.311A7.27 7.27 0 0 0 1.025 7.71c0 4.02 3.279 7.276 7.319 7.276a7.32 7.32 0 0 0 5.205-2.162q-.506.063-1.029.063c-4.61 0-8.343-3.714-8.343-8.29 0-1.167.242-2.278.681-3.286"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!--Home Section-->
+    <section id="home">
+        <div class="mt-40 md:mt-60 text-center">
+            <h3 class="text-2xl md:text-3xl text-gray-800 underline underline-offset-1 dark:text-gray-50">About Me</h3>
+            <p class="mx-20 mt-3 md:mx-96 text-gray-800 dark:text-gray-100 mb-5">Hello, World! I'm <strong class="text-teal-600">Renz Aljon Cruz</strong>, a web designer and developer. Passionate about creating awesome things on the web!</p>
+            <a class="bg-transparent border border-blue-400 p-2 rounded-md dark:text-white" href="mailto: rc4317809@gmail.com, rera.cruz.up@phinmaed.com">Contact me</a>
+            <a class="bg-blue-400 border border-blue-300  p-2 rounded-md text-white dark:bg-blue-500 mb-9 " download="Resume" href="CV Resume.png">Download CV</a>
+        </div>
+        <div class="">
+            <h4 class="text-gray-500 dark:text-gray-100  mt-28 text-xl font-mono border-t dark:border-t-slate-600 mx-4 p-5 md:text-center md:text-2xl underline ">Services</h4>
+            <div class="flex flex-wrap text-center">
+                <div class="w-80 bg-white border-t-4 shadow-lg border-t-teal-700 bg-cover  mx-auto my-5 dark:bg-slate-700 dark:border-t-4 dark:border-t-teal-400:">
+                    <img class="w-24 h-20 p-2 mx-auto" src="perspective_matte-463-128x128.png" alt="">
+                    <h1 class="text-xl p-2 dark:text-white font-sans">Web Design</h1>
+                    <p class="text-gray-600 dark:text-white  pb-9">I provide interactive and seeming designs using figma</p>
+                </div>
+                <div class="w-80 bg-white border-t-4 shadow-lg border-t-teal-700 bg-cover  mx-auto my-5 dark:bg-slate-700 dark:border-t-4 dark:border-t-teal-400:">
+                    <img class="w-24 h-20 p-2 mx-auto" src="perspective_matte-463-128x128.png" alt="">
+                    <h1 class="text-xl p-2 dark:text-white font-sans">Web Development</h1>
+                    <p class="text-gray-600 dark:text-white pb-9">I design and develop responsive websites using tailwind and javascript frameworks</p>
+                </div>
+                <div class="w-80 bg-white border-t-4 shadow-lg border-t-teal-700 bg-cover  mx-auto my-5 dark:bg-slate-700 dark:border-t-4 dark:border-t-teal-400:">
+                    <img class="w-24 h-20 p-2 mx-auto" src="perspective_matte-463-128x128.png" alt="">
+                    <h1 class="text-xl p-2 dark:text-white font-sans">Mobile App Development</h1>
+                    <p class="text-gray-600 dark:text-white pb-9">No Description Available.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Portfolio Section-->
+    <section id="portfolio">
+        <div>
+            <h4 class="text-gray-600 dark:text-gray-100  mt-28 text-xl font-mono border-t  dark:border-t-slate-600 mx-4 p-5 md:text-center md:text-2xl underline ">Portfolio</h4>
+            <div class="flex flex-wrap text-center">
+                <div class="w-80 h-60 bg-white   bg-cover shadow-lg mx-auto my-5 dark:bg-slate-700  rounded-md">
+                    <img class="w-24 h-20 p-2 mx-auto" src="perspective_matte-463-128x128.png" alt="">
+                    <h1 class="text-xl p-2 dark:text-white font-sans">Pusite</h1>
+                    <p class="text-gray-600 dark:text-white  pb-8">Under Alpha testing</p>
+                    <a class="bg-blue-400 rounded-md p-2 mx-2 dark:bg-blue-500 text-white  hover:bg-blue-600 dark:hover:bg-blue-600 " href="https://github.com/RenzAljon24/testing">Source Code</a>
+                    <a class="bg-orange-400 rounded-md p-2 mx-2 dark:bg-orange-500 text-white  hover:bg-orange-600 dark:hover:bg-orange-600" href="https://renzaljon24.github.io/testing/">Demo</a>
+                </div>
+                <div class="w-80 h-60 bg-white   bg-cover shadow-lg mx-auto my-5 dark:bg-slate-700  rounded-md">
+                    <img class="w-24 h-20 p-2 mx-auto" src="perspective_matte-463-128x128.png" alt="">
+                    <h1 class="text-xl p-2 dark:text-white font-sans">Real-time Chat App</h1>
+                    <p class="text-gray-600 dark:text-white  pb-8">Under Development</p>
+                    <a class="bg-blue-400 rounded-md p-2 mx-2 dark:bg-blue-500 text-white  hover:bg-blue-600 dark:hover:bg-blue-600 " href="#">Source Code</a>
+                    <a class="bg-orange-400 rounded-md p-2 mx-2 dark:bg-orange-500 text-white  hover:bg-orange-600 dark:hover:bg-orange-600" href="#">Demo</a>
+                </div>
+                <div class="w-80 h-60 bg-white   bg-cover shadow-lg mx-auto my-5 dark:bg-slate-700  rounded-md">
+                    <img class="w-24 h-20 p-2 mx-auto" src="perspective_matte-463-128x128.png" alt="">
+                    <h1 class="text-xl p-2 dark:text-white font-sans">Blog Site</h1>
+                    <p class="text-gray-600 dark:text-white  pb-8">Under Development</p>
+                    <a class="bg-blue-400 rounded-md p-2 mx-2 dark:bg-blue-500 text-white  hover:bg-blue-600 dark:hover:bg-blue-600 " href="#">Source Code</a>
+                    <a class="bg-orange-400 rounded-md p-2 mx-2 dark:bg-orange-500 text-white  hover:bg-orange-600 dark:hover:bg-orange-600 " href="#">Demo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--Tools Section-->
+    <section id="tools">
+        <div>
+            <h4 class="text-gray-800 dark:text-gray-100  mt-36 text-xl font-mono border-t  dark:border-t-slate-600 mx-4 p-5  md:text-2xl underline">Social Apps and Tools I've Used</h4>
+            <ul class="text-gray-700 dark:text-gray-200 mx-10">
+                <li class="m-1"><a class="text-blue-600 underline" href="#">LinkedIn:</a> For job-related posts and engagements.</li>
+                <li class="m-1"><a class="text-blue-600 underline" href="#">Github:</a> This is where I deploy my projects and manage version control.</li>
+                <li class="m-1"><a class="text-blue-600 underline" href="#">Quizlet:</a> Study and Flashcard Creation</li>
+                <li class="m-1"><a class="text-blue-600 underline" href="#">StackOverflow:</a> This is by far my favourite platform when I'm coding. It's where I go to find answers and solutions. It's like my quick guide to getting things done while coding, and it's always there when I need it.</li>
+                <li class="m-1"><a class="text-blue-600 underline" href="#">Figma:</a> I rarely use this, but it is useful when you are designing your website or just want to edit and design some stuff.
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="text-gray-800 dark:text-gray-100  mt-4 text-xl font-mono border-t  dark:border-t-slate-600 mx-4 p-5  md:text-2xl underline">Online learning Platforms</h4>
+            <ul class="text-gray-700 dark:text-gray-200 mx-10">
+                <li class="m-1"><a class="text-blue-600 underline" href="#">W3Wschools:</a> This site is very helpful when you are a beginner. It provides step-by-step explanations and free code samples to experiment with and make changes to.</li>
+                <li class="m-1"><a class="text-blue-600 underline" href="#">Udemy:</a> Udemy is another great site. They offer free courses with certificates that you can take advantage of.</li>
+                <li class="m-1"><a class="text-blue-600 underline" href="#">Codewars:</a> For tech-related posts and engagements, it's like the Facebook version app for tech people.</li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="text-gray-800 dark:text-gray-100  mt-4 text-xl font-mono border-t  dark:border-t-slate-600 mx-4 p-5  md:text-2xl underline">Flowchart and Diagram Tools</h4>
+            <ul class="text-gray-700 dark:text-gray-200 mx-10">
+                <li class="m-1"><a class="text-blue-600 underline" href="#">Draw.io:</a> Free, open-source online tool for creating flowcharts, network diagrams, and more.</li>
+                <li class="m-1"><a class="text-blue-600 underline" href="#">Lucidchart:</a> Web-based tool for collaborative flowcharts, mind maps, and UML diagrams.</li>
+                <li class="m-1"><a class="text-blue-600 underline" href="#">SmartDraw:</a> Diagramming tool with integration options for various platforms.
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!--Blog Section-->
+    <section id="blogs">
+        <div>
+            <h4 class="text-gray-800 dark:text-gray-100  mt-36 text-xl font-mono border-t  dark:border-t-slate-600 mx-4 p-5  md:text-2xl ">Talks</h4>
+            <div class="flex flex-wrap text-center">
+                <div class="w-80 h-60 bg-white border-t-4 shadow-lg border-t-teal-700 bg-cover  mx-auto my-5 hover:scale-90 duration-200 hover:ring-2 ring-sky-300  dark:ring-sky-600 dark:bg-slate-700 dark:border-t-4 dark:border-t-teal-400:">
+                    <img class="w-24 h-20 p-2 mx-auto" src="perspective_matte-463-128x128.png" alt="">
+                    <h1 class="text-xl p-2 dark:text-white font-sans">Hello, World!</h1>
+                    <p class="text-gray-600 dark:text-white  pb-9">No Description Available.</p>
+                    <a class="text-blue-600 font-thin underline m-2 p-2" href="#">Read more</a>
+                </div>
+                <div class="w-80 h-60 bg-white border-t-4 shadow-lg border-t-teal-700 bg-cover  mx-auto my-5 hover:scale-90 duration-200 hover:ring-1 ring-sky-300 dark:ring-sky-600 dark:bg-slate-700 dark:border-t-4 dark:border-t-teal-400:">
+                    <img class="w-24 h-20 p-2 mx-auto" src="perspective_matte-463-128x128.png" alt="">
+                    <h1 class="text-xl p-2 dark:text-white font-sans">Era Of AI</h1>
+                    <p class="text-gray-600 dark:text-white pb-9">No Description Available.</p>
+                    <a class="text-blue-600 font-thin underline m-2 p-2" href="#">Read more</a>
+                </div>
+                <div class="w-80 h-60 bg-white border-t-4 shadow-lg border-t-teal-700 bg-cover  mx-auto my-5 hover:scale-90 duration-200 hover:ring-1 ring-sky-300 dark:ring-sky-600 dark:bg-slate-700 dark:border-t-4 dark:border-t-teal-400:">
+                    <img class="w-24 h-20 p-2 mx-auto" src="perspective_matte-463-128x128.png" alt="">
+                    <h1 class="text-xl p-2 dark:text-white font-sans">The Danger of using AI</h1>
+                    <p class="text-gray-600 dark:text-white pb-9">No Description Available.</p>
+                    <a class="text-blue-600 font-thin underline " href="#">Read more</a>
+                </div>
+        </div>
+    </section>
+
+    <!--Footer-->
+    <footer>
+            <div class="flex flex-col text-gray-600 dark:bg-slate-800 sm:hidden md:block">
+                <h1 class="mt-20 p-1 pt-10 text-2xl text-teal-900 border-t-2 border-t-gray-400 dark:border-t-slate-600 dark:text-teal-400 font-sans text-center  mx-5 ">Social Sites</h1>
+                <ul class="text-center text-xl dark:text-gray-50 mt-4">
+                    <li class="m-1 p-2   hover:scale-90 rounded-md"><a href="https://www.facebook.com/profile.php?id=100066723944685">Facebook</a></li>
+                    <li class="m-1 p-2   hover:scale-90 rounded-md"><a href="https://www.instagram.com/rarc_0524/">Instagram</a></li>
+                    <li class="m-1 p-2   hover:scale-90 rounded-md"><a href="https://www.linkedin.com/in/renz-aljon-cruz-ba13bb286">LinkedIn</a></li>
+                    <li class="m-1 p-2   hover:scale-90 rounded-md"><a href="https://github.com/RenzAljon24">Github</a></li>
+                </ul>
+            </div>
+            <div class="mt-14 md:border-none md:mt-4 text-center border-t-2 mx-10 p-5 border-t-gray-400 dark:border-t-slate-600 text-gray-600 dark:text-gray-400 ">
+                <span >@Copyright © 2024 - Renz Aljon Cruz</span>
+            </div>
+    </footer>
+    
+
+    <script src="index.js">
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
